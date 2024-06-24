@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{
+    margin:0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(97, 216, 38) 50%, rgb(1, 84, 99) 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.7;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.form {
+  text-align:center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inform{
+  background-color: aliceblue;
+  border-radius:.25em;
+  height: 500px;
+  width: 1000px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.hel{
+  display: flex;
+  width: 200px;
+  justify-self: end;
+  align-items: center;
+}
+.logt{
+  
+  font-family:cursive;
+  padding-top: 10%;
+  padding-left: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  align-self: flex-start;
+}
+.log{
+  color: rgb(44, 150, 255);
+  display: flex;
+  align-self: center;
+}
+.data{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+@keyframes slide {
+  0% {
+    transform:translateX(-20%);
+  }
+  100% {
+    transform:translateX(20%);
+  }
+}
+    </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+  <div class="form">
+    <div class="inform">
+      <div class="hel"><img src="https://static.vecteezy.com/system/resources/previews/004/958/915/original/college-university-cartoon-concept-vector.jpg" alt="colled" width="500px">
+      </div>
+      <div class="logt">
+        <div class="log">
+        <h1>Student Login</h1>
+        </div><br>
+        <div class="data">
+          <form method="POST">
+            {% csrf_token %}   
+               
+            <label for="email" style="display: flex;align-self: flex-start;" ><h6>Email</h6></label>
+            <input type="email" name="email" placeholder="Enter your Email" style="width: 180px;"><br><br>
+            <label for="password" style="display: flex;align-self: flex-start;" ><h6>Password</h6></label>
+            <input type="password" name="password" placeholder="Enter your Password" style="width: 180px;"><br><br>
+            <button style="background-color:rgb(110, 199, 202);border: none;
+            width: 100px;height: 30px;font-family: cursive;color: antiquewhite;">
+              <a href="http://127.0.0.1:8000/teacher/" style="color: antiquewhite;text-decoration: none;">Teacher</a></button>
+            <button type="submit" style="background-color:rgb(110, 199, 202);border: none;
+            width: 70px;height: 30px;font-family: cursive;color: antiquewhite;">Verify</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
